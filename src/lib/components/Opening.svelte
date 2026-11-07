@@ -1,26 +1,35 @@
 <section class="section opening-section">
   <div class="container">
+    <span class="section-label">HOLY MATRIMONY</span>
+
     <div class="card opening-card">
+      <div class="arch-top-ornament">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+          <path d="M12 2C7.03 2 3 6.03 3 11v11h18V11c0-4.97-4.03-9-9-9z" stroke="var(--accent)"/>
+          <path d="M12 7a4 4 0 0 0-4 4v7h8v-7a4 4 0 0 0-4-4z" stroke="var(--accent)"/>
+        </svg>
+      </div>
+
       <div class="arabic-text">
         بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
       </div>
 
-      <div class="gold-divider">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
+      <div class="arch-divider">
+        <span>✦</span>
       </div>
 
-      <p class="verse-text font-serif">
-        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."
+      <p class="verse-quote font-serif">
+        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."
       </p>
 
-      <span class="verse-source">(QS. Ar-Rum: 21)</span>
+      <span class="verse-reference">— QS. Ar-Rum: 21</span>
 
-      <div class="greeting-box">
-        <p class="salam">Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
-        <p class="greeting-desc">
-          Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, kami bermaksud menyelenggarakan syukuran pernikahan putra-putri kami:
+      <div class="editorial-divider"></div>
+
+      <div class="greeting-content">
+        <h3 class="salam font-serif">Assalamu’alaikum Warahmatullahi Wabarakatuh</h3>
+        <p class="greeting-text">
+          Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri hari bahagia penyatuan janji suci kami:
         </p>
       </div>
     </div>
@@ -28,70 +37,84 @@
 </section>
 
 <style>
+  .opening-section {
+    background-color: var(--bg-main);
+  }
+
   .opening-card {
     position: relative;
-    border: 1px solid rgba(201, 168, 76, 0.3);
-    padding: 2rem 1.5rem;
-    background: linear-gradient(180deg, #ffffff 0%, #faf8f2 100%);
+    padding: 3.5rem 2rem;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .arch-top-ornament {
+    margin-bottom: 1.5rem;
+    color: var(--accent);
   }
 
   .arabic-text {
-    font-size: 1.6rem;
+    font-size: 1.85rem;
     font-family: 'Amiri', 'Traditional Arabic', serif;
     color: var(--primary-dark);
-    margin-bottom: 1rem;
+    line-height: 1.6;
     letter-spacing: 0.05em;
   }
 
-  .verse-text {
+  .verse-quote {
     font-size: 1.15rem;
     font-style: italic;
-    color: var(--text-dark);
-    line-height: 1.8;
-    max-width: 540px;
-    margin: 0 auto 0.75rem;
+    color: var(--text-main);
+    line-height: 1.85;
+    max-width: 520px;
+    margin: 0 auto 1rem;
   }
 
-  .verse-source {
+  .verse-reference {
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
+    letter-spacing: 0.15em;
     color: var(--accent-dark);
-    letter-spacing: 0.05em;
-    margin-bottom: 2rem;
+    text-transform: uppercase;
   }
 
-  .greeting-box {
-    border-top: 1px dashed rgba(135, 168, 120, 0.4);
-    padding-top: 1.5rem;
-    margin-top: 1rem;
+  .editorial-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--border-arch);
+    margin: 2.25rem auto;
+  }
+
+  .greeting-content {
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .salam {
+    font-size: 1.15rem;
     font-weight: 600;
-    font-size: 1.05rem;
     color: var(--primary-dark);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
-  .greeting-desc {
-    font-size: 0.95rem;
+  .greeting-text {
+    font-size: 0.92rem;
     color: var(--text-muted);
-    max-width: 480px;
-    margin: 0 auto;
-    line-height: 1.7;
+    line-height: 1.75;
   }
 
   @media (max-width: 480px) {
     .opening-card {
-      padding: 2.25rem 1.25rem;
+      padding: 2.5rem 1.25rem;
     }
     .arabic-text {
-      font-size: 1.35rem;
+      font-size: 1.5rem;
     }
-    .verse-text {
-      font-size: 1rem;
+    .verse-quote {
+      font-size: 1.02rem;
     }
   }
 </style>
-

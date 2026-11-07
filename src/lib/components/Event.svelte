@@ -34,7 +34,6 @@
     seconds = s < 10 ? '0' + s : String(s);
   }
 
-  // Google Calendar URL
   const calTitle = encodeURIComponent('Pernikahan Fajar & Aisyah');
   const calDetails = encodeURIComponent('Akad Nikah & Resepsi Pernikahan Fajar & Aisyah');
   const calLocation = encodeURIComponent('Grand Ballroom Hotel Horison Bekasi');
@@ -50,42 +49,40 @@
   });
 </script>
 
-<!-- Slide 1: Countdown / Save The Date -->
-<section class="section countdown-section" id="countdown">
+<section class="section event-section" id="event">
   <div class="container">
-    <h2 class="section-title">Save The Date</h2>
-    <p class="section-subtitle">Menghitung Hari Bahagia</p>
+    <span class="section-label">SAVE THE DATE</span>
+    <h2 class="section-title">Waktu & Tempat</h2>
 
-    <div class="countdown-container card">
-      <div class="wedding-bell">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="rgba(201,168,76,0.15)" stroke="#C9A84C"/>
-        </svg>
+    <!-- Countdown Timer Card -->
+    <div class="countdown-editorial card">
+      <span class="countdown-header-tag">COUNTING DOWN THE DAYS</span>
+      <p class="target-date-display font-serif">Minggu, 20 Desember 2026</p>
+
+      <div class="countdown-boxes">
+        <div class="time-block">
+          <span class="time-num font-editorial">{days}</span>
+          <span class="time-label">HARI</span>
+        </div>
+        <div class="time-sep">:</div>
+        <div class="time-block">
+          <span class="time-num font-editorial">{hours}</span>
+          <span class="time-label">JAM</span>
+        </div>
+        <div class="time-sep">:</div>
+        <div class="time-block">
+          <span class="time-num font-editorial">{minutes}</span>
+          <span class="time-label">MENIT</span>
+        </div>
+        <div class="time-sep">:</div>
+        <div class="time-block">
+          <span class="time-num font-editorial">{seconds}</span>
+          <span class="time-label">DETIK</span>
+        </div>
       </div>
 
-      <p class="countdown-target-date font-serif">Minggu, 20 Desember 2026</p>
-
-      <div class="countdown-grid">
-        <div class="timer-box">
-          <span class="timer-num font-serif">{days}</span>
-          <span class="timer-unit">Hari</span>
-        </div>
-        <div class="timer-box">
-          <span class="timer-num font-serif">{hours}</span>
-          <span class="timer-unit">Jam</span>
-        </div>
-        <div class="timer-box">
-          <span class="timer-num font-serif">{minutes}</span>
-          <span class="timer-unit">Menit</span>
-        </div>
-        <div class="timer-box">
-          <span class="timer-num font-serif">{seconds}</span>
-          <span class="timer-unit">Detik</span>
-        </div>
-      </div>
-
-      <a href={calUrl} target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-calendar">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <a href={calUrl} target="_blank" rel="noopener noreferrer" class="btn btn-champagne btn-cal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
           <line x1="16" y1="2" x2="16" y2="6"></line>
           <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -94,24 +91,21 @@
         Simpan ke Google Calendar
       </a>
     </div>
-  </div>
-</section>
 
-<!-- Slide 2: Detail Acara -->
-<section class="section event-section" id="event">
-  <div class="container">
-    <h2 class="section-title">Waktu & Tempat</h2>
-    <p class="section-subtitle">Agenda Acara</p>
-
-    <div class="events-grid">
+    <!-- Event Cards Grid -->
+    <div class="events-deck">
       {#each events as event}
-        <div class="card event-card">
-          <h3 class="event-title font-serif">{event.title}</h3>
-          <div class="gold-divider"></div>
+        <div class="card event-editorial-card">
+          <div class="arch-tag-header">
+            <span class="arch-tag-icon">✦</span>
+          </div>
 
-          <div class="event-info">
-            <div class="info-row">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <h3 class="event-name font-editorial">{event.title}</h3>
+          <div class="arch-divider"><span>✦</span></div>
+
+          <div class="event-details">
+            <div class="detail-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                 <line x1="16" y1="2" x2="16" y2="6"></line>
                 <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -120,22 +114,22 @@
               <span>{event.dateText}</span>
             </div>
 
-            <div class="info-row">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="detail-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
                 <circle cx="12" cy="12" r="10"></circle>
                 <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
               <span>{event.timeText}</span>
             </div>
 
-            <div class="info-row venue-row">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="detail-item venue-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
               <div>
                 <strong>{event.place}</strong>
-                <p class="event-address">{event.address}</p>
+                <p class="address-text">{event.address}</p>
               </div>
             </div>
           </div>
@@ -146,128 +140,162 @@
 </section>
 
 <style>
-  .wedding-bell {
-    margin-bottom: 0.5rem;
+  .event-section {
+    background-color: var(--bg-subtle);
   }
 
-  .countdown-target-date {
-    font-size: 1.35rem;
-    color: var(--primary-dark);
+  /* Countdown Card */
+  .countdown-editorial {
+    max-width: 520px;
+    margin: 0 auto 3rem;
+    padding: 2.75rem 2rem;
+    text-align: center;
+    border: 1px solid var(--border-arch);
+    border-radius: 24px;
+    background: #FFFFFF;
+  }
+
+  .countdown-header-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    color: var(--accent-dark);
     font-weight: 600;
-    margin-bottom: 1.25rem;
   }
 
-  .countdown-container {
-    background: linear-gradient(135deg, #ffffff 0%, #f6f9f4 100%);
-    border: 1px solid var(--accent);
-    padding: 2rem 1.5rem;
-    margin: 0 auto;
-    max-width: 480px;
+  .target-date-display {
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0.5rem 0 1.75rem;
   }
 
-  .countdown-grid {
+  .countdown-boxes {
     display: flex;
     justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
   }
 
-  .timer-box {
-    background: #ffffff;
-    border: 1px solid rgba(135, 168, 120, 0.3);
-    border-radius: 12px;
-    padding: 0.75rem 0.4rem;
-    min-width: 64px;
-    box-shadow: var(--shadow-sm);
+  .time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 65px;
   }
 
-  .timer-num {
-    display: block;
-    font-size: 1.85rem;
-    font-weight: 700;
-    color: var(--primary-dark);
+  .time-num {
+    font-size: 2.75rem;
     line-height: 1;
-    margin-bottom: 0.2rem;
+    color: var(--primary-dark);
   }
 
-  .timer-unit {
-    font-size: 0.7rem;
-    text-transform: uppercase;
+  .time-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
     color: var(--text-muted);
-    letter-spacing: 0.1em;
+    margin-top: 0.35rem;
+    font-weight: 600;
   }
 
-  .btn-calendar {
-    font-size: 0.88rem;
-    padding: 0.7rem 1.5rem;
+  .time-sep {
+    font-size: 2rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 1rem;
   }
 
-  .events-grid {
+  .btn-cal {
+    padding: 0.8rem 1.85rem;
+  }
+
+  /* Events Deck */
+  .events-deck {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    max-width: 480px;
+    gap: 2rem;
+    max-width: 520px;
     margin: 0 auto;
-    width: 100%;
   }
 
-  .event-card {
-    padding: 1.25rem 1.25rem;
-    border: 1px solid rgba(135, 168, 120, 0.3);
-    margin-bottom: 0;
+  .event-editorial-card {
+    padding: 2.75rem 2rem;
+    border-radius: 24px;
+    text-align: center;
+    position: relative;
+    border: 1px solid var(--border-subtle);
   }
 
-  .event-title {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 0.2rem;
+  .arch-tag-header {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    border: 1px solid var(--border-arch);
+    background: var(--bg-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
   }
 
-  .event-info {
+  .event-name {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-main);
+  }
+
+  .event-details {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 1.15rem;
     text-align: left;
-    margin-top: 0.25rem;
+    max-width: 420px;
+    margin: 0 auto;
   }
 
-  .info-row {
+  .detail-item {
     display: flex;
     align-items: flex-start;
-    gap: 0.65rem;
-    color: var(--text-dark);
-    font-size: 0.88rem;
+    gap: 0.85rem;
+    font-size: 0.95rem;
+    color: var(--text-main);
   }
 
-  .info-row svg {
-    color: var(--accent);
+  .detail-item svg {
+    color: var(--accent-dark);
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: 3px;
   }
 
-  .venue-row strong {
+  .venue-item strong {
     display: block;
-    color: var(--text-dark);
+    font-size: 1rem;
+    color: var(--text-main);
   }
 
-  .event-address {
-    font-size: 0.8rem;
+  .address-text {
+    font-size: 0.85rem;
     color: var(--text-muted);
-    margin-top: 0.1rem;
-    line-height: 1.4;
+    margin-top: 0.25rem;
+    line-height: 1.55;
   }
 
-  @media (max-height: 680px) {
-    .timer-box {
-      min-width: 52px;
-      padding: 0.5rem 0.25rem;
+  @media (max-width: 480px) {
+    .countdown-editorial {
+      padding: 2rem 1.25rem;
     }
-    .timer-num {
-      font-size: 1.5rem;
+    .time-num {
+      font-size: 2.2rem;
     }
-    .event-card {
-      padding: 0.85rem 1rem;
+    .time-block {
+      min-width: 50px;
+    }
+    .event-editorial-card {
+      padding: 2rem 1.25rem;
+    }
+    .event-name {
+      font-size: 1.7rem;
     }
   }
 </style>

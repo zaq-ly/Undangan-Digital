@@ -5,105 +5,107 @@
 
 <footer class="footer-section">
   <div class="container">
-    <div class="footer-card card">
-      <div class="ornament-bottom">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="rgba(201,168,76,0.15)" stroke="#C9A84C"/>
-        </svg>
+    <div class="footer-editorial-card card">
+      <div class="arch-star">
+        <span>✦</span>
       </div>
 
-      <p class="closing-text font-serif">
-        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.
+      <p class="closing-quote font-serif">
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir serta memberikan doa restu kepada kami.
       </p>
 
-      <p class="wassalam">Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
+      <p class="wassalam-text">Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
 
-      <div class="gold-divider"></div>
+      <div class="arch-divider">
+        <span>✦</span>
+      </div>
 
-      <p class="family-label">Kami yang berbahagia,</p>
-      <h3 class="couple-names font-script">{groom.shortName} & {bride.shortName}</h3>
-      <p class="family-members">Beserta segenap keluarga besar kedua mempelai</p>
+      <span class="family-tag">KAMI YANG BERBAHAGIA</span>
+      <h3 class="couple-closing-names font-editorial">{groom.shortName} & {bride.shortName}</h3>
+      <p class="family-note">Beserta seluruh keluarga besar kedua mempelai</p>
     </div>
 
-    <div class="footer-credit">
-      <p>© 2026 Undangan Digital. Dibuat dengan cinta & kebahagiaan.</p>
+    <div class="footer-brand">
+      <p>THE WEDDING CELEBRATION OF FAJAR & AISYAH • 2026</p>
     </div>
   </div>
 </footer>
 
 <style>
   .footer-section {
-    min-height: 100vh;
-    min-height: 100dvh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem 0;
+    padding: 5rem 0 3rem;
     text-align: center;
-    box-sizing: border-box;
+    background-color: var(--bg-subtle);
   }
 
-  .footer-card {
-    padding: 2rem 1.5rem;
-    border: 1px solid rgba(201, 168, 76, 0.35);
-    background: linear-gradient(180deg, #ffffff 0%, #faf8f2 100%);
-    max-width: 480px;
+  .footer-editorial-card {
+    padding: 3.5rem 2rem;
+    border-radius: 28px;
+    border: 1px solid var(--border-subtle);
+    max-width: 520px;
     margin: 0 auto;
+    background: #FFFFFF;
   }
 
-  .ornament-bottom {
+  .arch-star {
+    font-size: 1.5rem;
+    color: var(--accent);
     margin-bottom: 1.25rem;
   }
 
-  .closing-text {
-    font-size: 1.1rem;
+  .closing-quote {
+    font-size: 1.15rem;
     font-style: italic;
-    color: var(--text-dark);
-    max-width: 500px;
-    margin: 0 auto 1.25rem;
-    line-height: 1.7;
+    color: var(--text-main);
+    line-height: 1.85;
+    max-width: 440px;
+    margin: 0 auto 1.5rem;
   }
 
-  .wassalam {
+  .wassalam-text {
+    font-size: 1.05rem;
     font-weight: 600;
     color: var(--primary-dark);
-    font-size: 1rem;
+  }
+
+  .family-tag {
+    display: block;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    color: var(--accent-dark);
+    font-weight: 600;
     margin-bottom: 0.5rem;
   }
 
-  .family-label {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.25rem;
+  .couple-closing-names {
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--text-main);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
   }
 
-  .couple-names {
-    font-size: 3.25rem;
-    color: var(--text-dark);
-    line-height: 1.2;
-    margin-bottom: 0.25rem;
-  }
-
-  .family-members {
-    font-size: 0.85rem;
+  .family-note {
+    font-size: 0.88rem;
     color: var(--text-muted);
   }
 
-  .footer-credit {
-    margin-top: 2rem;
-    font-size: 0.75rem;
+  .footer-brand {
+    margin-top: 2.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
     color: var(--text-muted);
   }
 
   @media (max-width: 480px) {
-    .couple-names {
-      font-size: 2.65rem;
+    .footer-editorial-card {
+      padding: 2.5rem 1.25rem;
+    }
+    .closing-quote {
+      font-size: 1.02rem;
+    }
+    .couple-closing-names {
+      font-size: 2.5rem;
     }
   }
 </style>
-

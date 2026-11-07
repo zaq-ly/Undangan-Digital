@@ -3,154 +3,199 @@
   const { groom, bride } = invitationData;
 </script>
 
-<!-- Slide: Mempelai Pria -->
-<section class="section couple-section" id="groom">
+<section class="section couple-section" id="couple">
   <div class="container">
-    <h2 class="section-title">Mempelai Pria</h2>
-    <p class="section-subtitle">The Groom</p>
+    <span class="section-label">THE HAPPY COUPLE</span>
+    <h2 class="section-title">Mempelai</h2>
 
-    <div class="card person-card">
-      <div class="photo-wrapper">
-        <img src={groom.photo} alt={groom.name} class="person-photo" loading="lazy" />
-        <div class="photo-ring"></div>
+    <div class="couple-editorial-wrap">
+      <!-- Mempelai Pria -->
+      <div class="couple-card card">
+        <div class="arch-portrait">
+          <div class="arch-frame person-arch">
+            <img src={groom.photo} alt={groom.name} class="portrait-img" loading="lazy" />
+          </div>
+          <div class="arch-ring"></div>
+        </div>
+
+        <span class="role-badge">THE GROOM</span>
+        <h3 class="couple-name font-editorial">{groom.name}</h3>
+        <p class="couple-parents">{groom.sonOf}</p>
+
+        {#if groom.instagram}
+          <a
+            href={`https://instagram.com/${groom.instagram.replace('@', '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ig-pill"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>{groom.instagram}</span>
+          </a>
+        {/if}
       </div>
-      <h3 class="person-name font-serif">{groom.name}</h3>
-      <p class="person-desc">{groom.sonOf}</p>
-      {#if groom.instagram}
-        <a
-          href={`https://instagram.com/${groom.instagram.replace('@', '')}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="ig-link"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-          <span>{groom.instagram}</span>
-        </a>
-      {/if}
-    </div>
-  </div>
-</section>
 
-<!-- Slide: Mempelai Wanita -->
-<section class="section couple-section" id="bride">
-  <div class="container">
-    <h2 class="section-title">Mempelai Wanita</h2>
-    <p class="section-subtitle">The Bride</p>
-
-    <div class="card person-card">
-      <div class="photo-wrapper">
-        <img src={bride.photo} alt={bride.name} class="person-photo" loading="lazy" />
-        <div class="photo-ring"></div>
+      <!-- Ampersand -->
+      <div class="editorial-ampersand font-editorial">
+        <span>&</span>
       </div>
-      <h3 class="person-name font-serif">{bride.name}</h3>
-      <p class="person-desc">{bride.daughterOf}</p>
-      {#if bride.instagram}
-        <a
-          href={`https://instagram.com/${bride.instagram.replace('@', '')}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="ig-link"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-          <span>{bride.instagram}</span>
-        </a>
-      {/if}
+
+      <!-- Mempelai Wanita -->
+      <div class="couple-card card">
+        <div class="arch-portrait">
+          <div class="arch-frame person-arch">
+            <img src={bride.photo} alt={bride.name} class="portrait-img" loading="lazy" />
+          </div>
+          <div class="arch-ring"></div>
+        </div>
+
+        <span class="role-badge">THE BRIDE</span>
+        <h3 class="couple-name font-editorial">{bride.name}</h3>
+        <p class="couple-parents">{bride.daughterOf}</p>
+
+        {#if bride.instagram}
+          <a
+            href={`https://instagram.com/${bride.instagram.replace('@', '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ig-pill"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>{bride.instagram}</span>
+          </a>
+        {/if}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .person-card {
+  .couple-section {
+    background-color: var(--bg-subtle);
+  }
+
+  .couple-editorial-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .couple-card {
     width: 100%;
     max-width: 440px;
-    padding: 2rem 1.5rem;
-    margin: 0 auto;
-    position: relative;
-    border: 1px solid rgba(135, 168, 120, 0.3);
+    padding: 3rem 1.75rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .photo-wrapper {
+  /* Arch Portrait */
+  .arch-portrait {
     position: relative;
-    width: 135px;
-    height: 135px;
-    margin: 0 auto 1.25rem;
+    width: 160px;
+    height: 220px;
+    margin-bottom: 1.75rem;
   }
 
-  .person-photo {
+  .person-arch {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    border-radius: 100px 100px 14px 14px;
+    border: 1px solid var(--border-arch);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .portrait-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
-    position: relative;
-    z-index: 2;
   }
 
-  .photo-ring {
+  .arch-ring {
     position: absolute;
     inset: -6px;
-    border-radius: 50%;
-    border: 2px dashed var(--accent);
-    animation: rotateSlow 24s linear infinite;
+    border-radius: 106px 106px 20px 20px;
+    border: 1px solid var(--border-arch);
+    pointer-events: none;
+    z-index: 1;
   }
 
-  .person-name {
-    font-size: 1.55rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 0.4rem;
-    line-height: 1.3;
+  .role-badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    color: var(--accent-dark);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 
-  .person-desc {
+  .couple-name {
+    font-size: 2.1rem;
+    font-weight: 400;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .couple-parents {
     font-size: 0.88rem;
     color: var(--text-muted);
-    margin-bottom: 1rem;
     line-height: 1.6;
-    padding: 0 0.5rem;
+    margin-bottom: 1.25rem;
+    max-width: 340px;
   }
 
-  .ig-link {
+  .ig-pill {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    font-size: 0.85rem;
+    gap: 0.45rem;
+    font-size: 0.8rem;
     color: var(--primary-dark);
     text-decoration: none;
-    padding: 0.35rem 0.85rem;
-    border-radius: 20px;
-    background: var(--primary-light);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-main);
     transition: all 0.2s ease;
   }
 
-  .ig-link:hover {
-    background: var(--primary);
-    color: #ffffff;
+  .ig-pill:hover {
+    border-color: var(--accent);
+    background: var(--accent-light);
   }
 
-  @keyframes rotateSlow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  .editorial-ampersand {
+    font-size: 3.5rem;
+    color: var(--accent);
+    line-height: 1;
+    margin: -0.5rem 0;
   }
 
-  @media (max-height: 680px) {
-    .photo-wrapper {
-      width: 105px;
-      height: 105px;
-      margin-bottom: 0.75rem;
+  @media (min-width: 768px) {
+    .couple-editorial-wrap {
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      gap: 1.5rem;
     }
-    .person-card {
-      padding: 1.25rem 1rem;
+    .couple-card {
+      max-width: 320px;
     }
-    .person-name {
-      font-size: 1.35rem;
+    .editorial-ampersand {
+      align-self: center;
+      margin: 0;
     }
   }
 </style>

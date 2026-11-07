@@ -3,21 +3,22 @@
   const { loveStories } = invitationData;
 </script>
 
-<section class="section story-section">
+<section class="section story-section" id="story">
   <div class="container">
-    <h2 class="section-title">Kisah Cinta Kami</h2>
-    <p class="section-subtitle">Our Love Journey</p>
+    <span class="section-label">OUR JOURNEY</span>
+    <h2 class="section-title">Kisah Cinta</h2>
 
-    <div class="timeline">
+    <div class="timeline-wrap">
       {#each loveStories as story, index}
-        <div class="timeline-item">
-          <div class="timeline-dot">
-            <span class="dot-inner"></span>
+        <div class="timeline-row">
+          <div class="timeline-marker">
+            <span class="marker-dot"></span>
           </div>
-          <div class="timeline-content card">
-            <span class="story-year font-serif">{story.year}</span>
-            <h3 class="story-title">{story.title}</h3>
-            <p class="story-desc">{story.description}</p>
+
+          <div class="card timeline-card">
+            <span class="timeline-year font-editorial">{story.year}</span>
+            <h3 class="timeline-heading font-serif">{story.title}</h3>
+            <p class="timeline-desc">{story.description}</p>
           </div>
         </div>
       {/each}
@@ -27,87 +28,94 @@
 
 <style>
   .story-section {
-    background: rgba(135, 168, 120, 0.06);
+    background-color: var(--bg-main);
   }
 
-  .timeline {
+  .timeline-wrap {
     position: relative;
-    max-width: 500px;
-    margin: 0.75rem auto 0;
-    padding-left: 1.75rem;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    top: 15px;
-    bottom: 25px;
-    left: 8px;
-    width: 2px;
-    background: linear-gradient(180deg, var(--accent) 0%, var(--primary) 100%);
-  }
-
-  .timeline-item {
-    position: relative;
-    margin-bottom: 0.85rem;
+    max-width: 520px;
+    margin: 2.5rem auto 0;
+    padding-left: 2.25rem;
     text-align: left;
   }
 
-  .timeline-dot {
+  .timeline-wrap::before {
+    content: '';
     position: absolute;
-    left: -1.75rem;
-    top: 1rem;
-    width: 18px;
-    height: 18px;
+    top: 24px;
+    bottom: 30px;
+    left: 10px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--primary-light) 100%);
+  }
+
+  .timeline-row {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  .timeline-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -2.25rem;
+    top: 1.5rem;
+    width: 21px;
+    height: 21px;
     border-radius: 50%;
-    background: #ffffff;
-    border: 2px solid var(--accent);
+    background: var(--bg-main);
+    border: 1px solid var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 2;
   }
 
-  .dot-inner {
-    width: 8px;
-    height: 8px;
+  .marker-dot {
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    background: var(--primary);
+    background: var(--accent-dark);
   }
 
-  .timeline-content {
-    margin-bottom: 0;
-    padding: 0.85rem 1.15rem;
+  .timeline-card {
+    padding: 1.75rem 1.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-subtle);
   }
 
-  .story-year {
-    display: inline-block;
-    font-size: 1.15rem;
-    font-weight: 700;
+  .timeline-year {
+    font-size: 1.6rem;
     color: var(--accent-dark);
-    margin-bottom: 0.15rem;
+    font-weight: 400;
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.35rem;
   }
 
-  .story-title {
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
-    color: var(--text-dark);
-    margin-bottom: 0.25rem;
+  .timeline-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
   }
 
-  .story-desc {
-    font-size: 0.82rem;
+  .timeline-desc {
+    font-size: 0.88rem;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.65;
   }
 
   @media (max-width: 480px) {
-    .timeline {
+    .timeline-wrap {
       padding-left: 1.75rem;
     }
-    .timeline-dot {
+    .timeline-marker {
       left: -1.75rem;
+    }
+    .timeline-card {
+      padding: 1.25rem 1.15rem;
     }
   }
 </style>
-

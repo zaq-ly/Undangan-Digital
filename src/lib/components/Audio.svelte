@@ -141,9 +141,10 @@
 
   .music-btn.playing {
     animation: rotateDisc 6s linear infinite;
-    background: var(--primary);
-    border-color: var(--primary-light);
+    background: var(--accent);
+    border-color: var(--accent-light);
     color: #ffffff;
+    box-shadow: 0 4px 18px rgba(197, 168, 128, 0.4);
   }
 
   @keyframes rotateDisc {
