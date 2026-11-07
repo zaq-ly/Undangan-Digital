@@ -33,14 +33,25 @@
 
 <style>
   .footer-section {
-    padding: 3rem 0 2.5rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
     text-align: center;
+    box-sizing: border-box;
   }
 
   .footer-card {
-    padding: 3rem 1.75rem;
+    padding: 2rem 1.5rem;
     border: 1px solid rgba(201, 168, 76, 0.35);
     background: linear-gradient(180deg, #ffffff 0%, #faf8f2 100%);
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .ornament-bottom {
@@ -95,3 +106,4 @@
     }
   }
 </style>
+

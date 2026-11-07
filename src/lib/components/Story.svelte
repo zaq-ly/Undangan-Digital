@@ -32,9 +32,9 @@
 
   .timeline {
     position: relative;
-    max-width: 540px;
-    margin: 2rem auto 0;
-    padding-left: 2rem;
+    max-width: 500px;
+    margin: 0.75rem auto 0;
+    padding-left: 1.75rem;
   }
 
   .timeline::before {
@@ -42,23 +42,23 @@
     position: absolute;
     top: 15px;
     bottom: 25px;
-    left: 10px;
+    left: 8px;
     width: 2px;
     background: linear-gradient(180deg, var(--accent) 0%, var(--primary) 100%);
   }
 
   .timeline-item {
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 0.85rem;
     text-align: left;
   }
 
   .timeline-dot {
     position: absolute;
-    left: -2rem;
-    top: 1.25rem;
-    width: 22px;
-    height: 22px;
+    left: -1.75rem;
+    top: 1rem;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background: #ffffff;
     border: 2px solid var(--accent);
@@ -69,36 +69,36 @@
   }
 
   .dot-inner {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: var(--primary);
   }
 
   .timeline-content {
     margin-bottom: 0;
-    padding: 1.5rem;
+    padding: 0.85rem 1.15rem;
   }
 
   .story-year {
     display: inline-block;
-    font-size: 1.35rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--accent-dark);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.15rem;
   }
 
   .story-title {
     font-family: var(--font-serif);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: var(--text-dark);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
   .story-desc {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
   @media (max-width: 480px) {
@@ -110,3 +110,4 @@
     }
   }
 </style>
+

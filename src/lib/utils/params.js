@@ -4,3 +4,4 @@ export function getGuestName() {
   const name = urlParams.get('to') || urlParams.get('u') || urlParams.get('nama');
   return name ? name.trim() : 'Tamu Undangan';
 }
+

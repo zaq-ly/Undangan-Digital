@@ -78,3 +78,4 @@ export const invitationData = {
   ],
   musicUrl: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-113263.mp3"
 };
+

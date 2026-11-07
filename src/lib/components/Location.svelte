@@ -14,7 +14,7 @@
         <iframe
           src={mapEmbedUrl}
           width="100%"
-          height="320"
+          height="220"
           style="border:0;"
           allowfullscreen=""
           loading="lazy"
@@ -36,7 +36,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
           </svg>
-          Buka Petunjuk Arah (Google Maps)
+          Buka Petunjuk Arah
         </a>
       </div>
     </div>
@@ -49,8 +49,10 @@
   }
 
   .map-card {
-    padding: 1rem;
+    padding: 0.85rem;
     overflow: hidden;
+    margin: 0 auto;
+    max-width: 500px;
   }
 
   .map-wrapper {
@@ -63,25 +65,26 @@
   .map-wrapper iframe {
     display: block;
     width: 100%;
-    min-height: 280px;
+    height: 220px;
   }
 
   .location-details {
-    padding: 1.5rem 1rem 0.5rem;
+    padding: 1rem 0.5rem 0.25rem;
     text-align: center;
   }
 
   .venue-name {
-    font-size: 1.45rem;
+    font-size: 1.3rem;
     color: var(--text-dark);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
   }
 
   .venue-address {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    max-width: 480px;
-    margin: 0 auto 1.5rem;
-    line-height: 1.6;
+    max-width: 440px;
+    margin: 0 auto 1.15rem;
+    line-height: 1.5;
   }
 </style>
+

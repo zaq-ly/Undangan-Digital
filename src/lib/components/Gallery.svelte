@@ -93,16 +93,11 @@
 <style>
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-    margin-top: 1rem;
-  }
-
-  @media (min-width: 640px) {
-    .gallery-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin: 0.5rem auto 0;
+    max-width: 440px;
+    width: 100%;
   }
 
   .gallery-item {

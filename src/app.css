@@ -27,9 +27,11 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
   font-size: 16px;
   background-color: var(--bg-main);
   color: var(--text-dark);
+  height: 100%;
 }
 
 body {
@@ -37,6 +39,7 @@ body {
   background-color: var(--bg-main);
   line-height: 1.6;
   overflow-x: hidden;
+  height: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -68,33 +71,45 @@ body {
 /* Common Section Container */
 .container {
   width: 100%;
-  max-width: 680px;
+  max-width: 580px;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 1rem;
 }
 
 .section {
-  padding: 4.5rem 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;
   text-align: center;
   position: relative;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: 2.25rem;
+  font-size: 1.85rem;
   font-weight: 700;
   color: var(--text-dark);
   letter-spacing: 0.02em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .section-subtitle {
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Ornaments / Dividers */
@@ -103,7 +118,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  margin: 1.25rem auto 2rem;
+  margin: 0.75rem auto 1.25rem;
 }
 .gold-divider::before,
 .gold-divider::after {
@@ -187,3 +202,4 @@ body {
 .animate-pulse {
   animation: pulseSlow 3s infinite ease-in-out;
 }
+

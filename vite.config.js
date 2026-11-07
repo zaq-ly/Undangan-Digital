@@ -6,3 +6,4 @@ export default defineConfig({
   plugins: [svelte()],
   base: './' // ensure relative paths work on GitHub Pages
 });
+

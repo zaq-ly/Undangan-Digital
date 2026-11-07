@@ -28,15 +28,10 @@
 </section>
 
 <style>
-  .opening-section {
-    padding-top: 5rem;
-    padding-bottom: 2rem;
-  }
-
   .opening-card {
     position: relative;
     border: 1px solid rgba(201, 168, 76, 0.3);
-    padding: 3rem 2rem;
+    padding: 2rem 1.5rem;
     background: linear-gradient(180deg, #ffffff 0%, #faf8f2 100%);
   }
 
@@ -99,3 +94,4 @@
     }
   }
 </style>
+
