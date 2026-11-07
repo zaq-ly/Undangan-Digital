@@ -2,10 +2,10 @@
 
 ## 1. Overview
 
-Aplikasi undangan pernikahan digital berbasis web, ringan di semua perangkat (mobile-first), tanpa framework — murni HTML/CSS/JS. Tema visual **Sage Green & Gold**.
+Aplikasi undangan pernikahan digital berbasis web, ringan di semua perangkat (mobile-first), menggunakan **Svelte + Vite**. Performa cepat, tanpa Virtual DOM, bundle minimalis. Tema visual **Sage Green & Gold**.
 
 > [!IMPORTANT]
-> Target utama: performa ringan di HP low-end sekalipun. Tidak boleh ada framework berat, build tool, atau dependency eksternal yang memperlambat load.
+> Target utama: performa ringan di HP low-end sekalipun. Svelte mengompilasi kode ke vanilla JavaScript murni saat build time tanpa overhead virtual DOM runtime yang berat.
 
 ---
 
@@ -22,17 +22,17 @@ Aplikasi undangan pernikahan digital berbasis web, ringan di semua perangkat (mo
 
 | Layer | Teknologi |
 |-------|-----------|
-| Markup | HTML5 semantic |
-| Styling | CSS3 (custom properties, flexbox, grid) |
-| Interaktif | Vanilla JavaScript (ES6+) |
+| Framework | Svelte 5 / Svelte |
+| Bundler / Dev Server | Vite |
+| Styling | Scoped CSS / CSS3 (custom properties, flexbox, grid) |
 | Font | Google Fonts (CDN) |
-| Icon | Inline SVG / CSS-only |
-| Hosting | GitHub Pages (gratis) |
+| Icon | Inline SVG / Lucide Icons (opsional) |
+| Hosting | GitHub Pages (build via GitHub Actions / static export) |
 | Peta | Google Maps embed (iframe) |
 | Musik | HTML5 `<audio>` API |
 
 > [!NOTE]
-> Tidak ada build tool, bundler, atau npm. Semua file statis, langsung deploy ke GitHub Pages.
+> Proyek dibangun menggunakan Vite + Svelte. Hasil build berupa file statis di folder `dist/` yang siap di-deploy ke GitHub Pages.
 
 ---
 
@@ -145,18 +145,33 @@ flowchart TD
 ```
 📁 Undangan Digital/
 ├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   ├── main.js          # Core logic
-│   ├── countdown.js     # Countdown timer
-│   ├── wishes.js        # Ucapan & doa
-│   ├── gallery.js       # Lightbox
-│   └── music.js         # Audio controller
-├── assets/
-│   ├── images/          # Foto placeholder
-│   ├── audio/           # Musik latar
-│   └── icons/           # SVG icons (if any)
+├── vite.config.js
+├── package.json
+├── svelte.config.js
+├── src/
+│   ├── main.js                 # Entry point
+│   ├── App.svelte              # Root component
+│   ├── app.css                 # Global styling / design tokens
+│   ├── lib/
+│   │   ├── components/
+│   │   │   ├── Hero.svelte     # Cover & tombol buka
+│   │   │   ├── Opening.svelte  # Doa / ayat
+│   │   │   ├── Couple.svelte   # Profil mempelai
+│   │   │   ├── Story.svelte    # Love story timeline
+│   │   │   ├── Event.svelte    # Detail acara & countdown
+│   │   │   ├── Location.svelte # Peta Google Maps
+│   │   │   ├── Gallery.svelte  # Galeri & lightbox
+│   │   │   ├── Wishes.svelte   # Ucapan & doa (localStorage)
+│   │   │   ├── Audio.svelte    # Background music controller
+│   │   │   └── Footer.svelte   # Ucapan terima kasih
+│   │   └── utils/
+│   │       ├── storage.js      # Helper localStorage
+│   │       └── params.js       # Parser URL parameter (?to=...)
+├── public/
+│   ├── audio/                  # Audio musik latar
+│   └── images/                 # Foto & gambar placeholder
+├── docs/
+│   └── PRD.md
 ├── README.md
 └── .gitignore
 ```
